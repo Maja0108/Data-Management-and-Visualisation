@@ -88,26 +88,71 @@ data['lifeexpectancy'] = data['lifeexpectancy'].convert_objects(convert_numeric=
 <h4>
 <a id="frequency-counts" class="anchor" href="#frequency-counts" aria-hidden="true"><span class="octicon octicon-link"></span></a>frequency counts</h4>
 
-<p>data['lifeexpectancy_range'] = pandas.cut(data.lifeexpectancy, range(0,100, 10))
+<p>data['lifeexpectancy_range'] = pandas.cut(data.lifeexpectancy, range(0,110, 10))
 le = data['lifeexpectancy_range'].value_counts(sort = False, normalize = True)</p>
 
-<p>data['femaleemployrate_range'] = pandas.cut(data.femaleemployrate, range(0,100, 10))
+<p>data['femaleemployrate_range'] = pandas.cut(data.femaleemployrate, range(0,110, 10))
 fe = data['femaleemployrate_range'].value_counts(sort= False, normalize= True)</p>
 
-<p>data['employrate_range']= pandas.cut(data.employrate, range(0,100, 10))
+<p>data['employrate_range']= pandas.cut(data.employrate, range(0,110, 10))
 em = data['employrate_range'].value_counts(sort= False,normalize = True)</p>
 
 <p>print 'female employrate:'
-print fe<em>100
-print ''
-print 'employrate":'
-print em</em>100
-print ''
-print 'life expectancy:'
+print fe*100</p>
+
+<p>print 'employrate:'
+print em*100</p>
+
+<p>print 'life expectancy:'
 print le*100 `</p>
 
 <h3>
 <a id="frequency-tables" class="anchor" href="#frequency-tables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Frequency tables</h3>
+
+<p>female employrate:
+(0, 10]      0.00
+(10, 20]     3.29
+(20, 30]     5.16
+(30, 40]    15.96
+(40, 50]    23.47
+(50, 60]    21.60
+(60, 70]     8.92
+(70, 80]     3.76
+(80, 90]     1.41
+(90, 100]    0.00
+dtype: float64</p>
+
+<p>employrate:
+(0, 10]      0.00
+(10, 20]     0.00
+(20, 30]     0.00
+(30, 40]     2.35
+(40, 50]    15.02
+(50, 60]    31.46
+(60, 70]    22.07
+(70, 80]     9.86
+(80, 90]     2.82
+(90, 100]    0.00
+dtype: float64</p>
+
+<p>life expectancy:
+(0, 10]      0.00
+(10, 20]     0.00
+(20, 30]     0.00
+(30, 40]     0.00
+(40, 50]     4.23
+(50, 60]    13.62
+(60, 70]    17.84
+(70, 80]    43.19
+(80, 90]    10.80
+(90, 100]    0.00
+dtype: float64</p>
+
+<h3>
+<a id="evaluation" class="anchor" href="#evaluation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Evaluation:</h3>
+
+<p>Female employment range is between 10 and 90%, the most common range is between 40-60% in the investigated dataset. Overall employment rate is between 30 and 90%, and the most common range is 50-60%. The difference of the minimum states that in some countries more male work than woman. The life expectancy in between 40-90 years, the most common range is between 70-80 years.
+Detailed examination of this dataset will continue.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/Maja0108/Data-Management-and-Visualisation">Data-management-and-visualisation</a> is maintained by <a href="https://github.com/Maja0108">Maja0108</a>.</span>
