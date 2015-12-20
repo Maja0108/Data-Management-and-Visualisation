@@ -12,14 +12,17 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Data-management-and-visualisation</h1>
-      <h2 class="project-tagline">Assignment 1</h2>
+      <h2 class="project-tagline">Assignment 1&amp;2</h2>
       <a href="https://github.com/Maja0108/Data-Management-and-Visualisation" class="btn">View on GitHub</a>
       <a href="https://github.com/Maja0108/Data-Management-and-Visualisation/zipball/master" class="btn">Download .zip</a>
       <a href="https://github.com/Maja0108/Data-Management-and-Visualisation/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
-      <h3>
+      <h2>
+<a id="assignment-1" class="anchor" href="#assignment-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assignment 1</h2>
+
+<h3>
 <a id="step-1-choose-a-dataset" class="anchor" href="#step-1-choose-a-dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 1: Choose a dataset.</h3>
 
 <p>I have chosen the Gapminder dataset because there are a lot of possibilities to gain new information and find less known connections</p>
@@ -61,6 +64,50 @@ Urbanisation also affects the life expectancy and the employment rates, but ther
 <a id="step-7-hypotesis" class="anchor" href="#step-7-hypotesis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Step 7: Hypotesis</h3>
 
 <p>My hypotheses are life expectancy depends on employment rate, but gender could change the intensity of the dependence, and state of the urbanisation has a really big effect. </p>
+
+<h2>
+<a id="assignment-2" class="anchor" href="#assignment-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Assignment 2</h2>
+
+<h3>
+<a id="code" class="anchor" href="#code" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code</h3>
+
+<p>` import pandas
+import numpy</p>
+
+<p>pandas.options.display.float_format = '{:,.2f}'.format
+data = pandas.read_csv('gapminder.csv', low_memory = False)
+data_columns = map(str.lower, data.columns)</p>
+
+<h4>
+<a id="setting-variables-you-will-be-working-with-to-numeric" class="anchor" href="#setting-variables-you-will-be-working-with-to-numeric" aria-hidden="true"><span class="octicon octicon-link"></span></a>setting variables you will be working with to numeric</h4>
+
+<p>data['femaleemployrate'] = data['femaleemployrate'].convert_objects(convert_numeric=True)
+data['employrate'] = data['employrate'].convert_objects(convert_numeric=True)
+data['lifeexpectancy'] = data['lifeexpectancy'].convert_objects(convert_numeric=True)</p>
+
+<h4>
+<a id="frequency-counts" class="anchor" href="#frequency-counts" aria-hidden="true"><span class="octicon octicon-link"></span></a>frequency counts</h4>
+
+<p>data['lifeexpectancy_range'] = pandas.cut(data.lifeexpectancy, range(0,100, 10))
+le = data['lifeexpectancy_range'].value_counts(sort = False, normalize = True)</p>
+
+<p>data['femaleemployrate_range'] = pandas.cut(data.femaleemployrate, range(0,100, 10))
+fe = data['femaleemployrate_range'].value_counts(sort= False, normalize= True)</p>
+
+<p>data['employrate_range']= pandas.cut(data.employrate, range(0,100, 10))
+em = data['employrate_range'].value_counts(sort= False,normalize = True)</p>
+
+<p>print 'female employrate:'
+print fe<em>100
+print ''
+print 'employrate":'
+print em</em>100
+print ''
+print 'life expectancy:'
+print le*100 `</p>
+
+<h3>
+<a id="frequency-tables" class="anchor" href="#frequency-tables" aria-hidden="true"><span class="octicon octicon-link"></span></a>Frequency tables</h3>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/Maja0108/Data-Management-and-Visualisation">Data-management-and-visualisation</a> is maintained by <a href="https://github.com/Maja0108">Maja0108</a>.</span>
